@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -23,10 +24,10 @@ public class Produto {
 	@Size(min = 5, max = 100, message = "Digite no minimo 5 caracteres e no maximo 100 caracteres")
 	private String nome;
 
-	@NotBlank(message = "Esse campo é obrigatório")
+	@NotNull(message = "Esse campo é obrigatório")
 	private Double preco;
 
-	@NotBlank(message = "Esse campo é obrigatório")
+	@NotNull(message = "Esse campo é obrigatório")
 	private Integer estoque;
 
 	@ManyToOne
